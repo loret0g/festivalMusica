@@ -1,0 +1,21 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sobre-festival {
+    @include m.contenedor;  // Reutiliza la clase .contenedor
+    @include m.tablet {
+        @include m.grid(2, 5rem);    // Le paso un mixin a un mixin, con el nº de columnas
+    }
+}
+
+.contenido-festival {
+    margin-top: 5rem;
+    h2 {
+        margin-bottom: 2rem;
+    }
+
+    .fecha {
+        color: v.$verde;
+        font-weight: bold;
+    }
+}

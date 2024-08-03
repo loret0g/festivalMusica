@@ -1,0 +1,54 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.video {
+    position: relative;             // padre
+
+    min-height: 50rem;
+    // max-height: 61.7rem;
+    max-height: 70rem;
+    overflow: hidden;
+
+    .overlay {
+        position: absolute;         // hijo al que posicionar sobre el padre
+        background: linear-gradient(
+            270deg,                 /* lo toma desde la esquina */
+            rgba(v.$morado, 60%),    /* inicial */
+            rgba(darken(v.$morado, 20%), 90%)    /* final */
+        );
+        inset: 0;
+
+        display: flex;
+        align-items: center;
+    }
+
+    video {
+        display: block; // quita la franja inferior que había
+        width: auto;
+        @include m.desktop {
+            width: 100%;
+        }
+    }
+}
+
+.contenido-video {
+    z-index: 10;    // Para poder seleccionar el título
+    h2 {
+        color: v.$blanco;
+        font-size: 4rem;
+        margin: 0;
+        @include m.tablet {
+            font-size: 7rem;
+        }
+    }
+
+    p {
+        background-color: v.$rosa;
+        display: inline-block;
+        padding: 1rem 2rem;
+        color: v.$blanco;
+        font-size: 2.4rem;
+        font-weight: bold;
+        margin: 0;
+    }
+}

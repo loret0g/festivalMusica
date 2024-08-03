@@ -1,0 +1,8 @@
+@forward 'normalize';
+@forward 'variables';
+@forward 'global';
+
+/*@use 'base/variables' as *;  // Si no lo nombro así, tendría que -> variables.$fuente_principal;
+@use 'base/normalize';*/
+// @forward no utiliza namespace
+// Lo usamos cuando quieres traer todo el contenido y no requieras el namespace
